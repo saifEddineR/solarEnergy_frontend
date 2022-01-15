@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+.resultPage {
+  text-align: center;
+  margin: 10% auto;
+}
+.resultPage h3 {
+  letter-spacing: 0.8px;
+  margin-bottom: 20px;
+  font-family: 'Lato', sans-serif;
+}
+.resultPage span {
+  color: darkblue;
+  font-weight: 700;
+}

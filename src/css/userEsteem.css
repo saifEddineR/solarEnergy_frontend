@@ -1,0 +1,8 @@
+.userEsteem-card {
+  border: 2px solid black;
+  width: 320px;
+  padding: 10px;
+}
+.userEsteem-card h5 {
+  text-align: center;
+}

@@ -1,0 +1,23 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400);
+
+.navbar {
+  background-color: #3d81f5;
+  position: sticky;
+  top: 0%;
+  left: 0%;
+  z-index: 99;
+  width: 100%;
+  margin: 0;
+}
+.bootstrap-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+#navbarCollapse3 {
+  grid-column: 3/4;
+}
+@media (max-width: 575px) {
+  #navbarCollapse3 {
+    grid-column: 1/2;
+  }
+}

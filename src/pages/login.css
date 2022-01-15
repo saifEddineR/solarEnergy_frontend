@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&display=swap');
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 100%;
+}
+.login-box {
+  background: rgba(0, 153, 255, 0.433);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border: 1px solid rgba(214, 208, 208, 0.3);
+  height: 500px;
+  width: 450px;
+  padding: 10px 20px;
+}
+.text-login p {
+  color: black;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+}
+.text-login span {
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  color: black;
+}
+.text-login {
+  text-align: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-form {
+  margin-top: 40px;
+}
+.form-control {
+  margin-top: 20px;
+  width: 350px;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  color: white;
+  height: 40px;
+  border: #00000033 1px solid;
+  font-size: 20px;
+  border-radius: 15px;
+  background-color: #a5a5a524;
+}
+.form-control::placeholder {
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Quicksand', sans-serif;
+  color: rgb(196, 196, 196);
+}
+.form-control:focus {
+  outline: none;
+}
+.form-enter {
+  margin-top: 20px;
+  width: 200px;
+  font-weight: bold;
+  height: 45px;
+  border-radius: 10px;
+  background: white;
+  font-family: 'Quicksand', sans-serif;
+  border: transparent 1px solid;
+}
+hr {
+  width: 70%;
+  margin-top: 40px;
+}
+.social-login p {
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  text-transform: capitalize;
+}
+.social-links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.fab {
+  color: white;
+  border-radius: 20px;
+  font-size: 40px;
+  width: 50px;
+  height: 50px;
+}
+.submit-btn {
+  cursor: pointer;
+}

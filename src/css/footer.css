@@ -1,0 +1,38 @@
+.footer {
+  height: 200px;
+  background-color: dodgerblue;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  color: white;
+  padding-top: 20px;
+}
+.footer-logo {
+  justify-self: center;
+}
+.footer-logo span {
+  font-size: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+.footer-logo span * {
+  cursor: pointer;
+}
+.footer-logo img {
+  width: 120px;
+}
+.footer-info {
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+}
+.footer-info span {
+  display: flex;
+  align-content: flex-start;
+}
+.footer-info span > :first-child {
+  font-size: 20px;
+}
+.footer-info span a {
+  text-decoration: none;
+  color: white;
+}

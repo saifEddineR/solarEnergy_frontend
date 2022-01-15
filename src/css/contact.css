@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  --light: black;
+  --white: white;
+  --green: #0947b3;
+}
+
+.contactForm {
+  margin: 50px auto;
+  width: 50%;
+}
+
+.contactForm h3 {
+  color: var(--green);
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.contactForm form {
+  margin-top: 20px;
+  background: var(--white);
+}
+
+.formRow {
+  margin: 10px 0 20px 0;
+}
+
+.formInput {
+  padding: 25px 10px;
+  background-color: var(--white);
+  box-shadow: 0 0 0 2px var(--green);
+  border: none;
+  color: var(--green);
+}
+
+.formInput:focus {
+  background-color: var(--white);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--green);
+  color: var(--light);
+}
+
+.formInput::placeholder {
+  color: var(--green);
+  opacity: 1;
+}
+
+.formInput:focus::placeholder {
+  color: var(--green);
+  opacity: 1;
+}
+
+.errorMessage {
+  color: #f45532;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+#notifyToast {
+  color: #fff;
+  border-radius: 6px;
+  width: 200px;
+  margin-left: 75px;
+  background-color: var(--green);
+}
+
+.submit-btn {
+  background-color: var(--white);
+  color: var(--green) !important;
+  padding: 15px 50px;
+  border: 2px solid var(--green);
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.submit-btn:hover {
+  background-color: var(--green);
+  color: var(--white) !important;
+  border: 2px solid var(--green);
+}
+
+.submit-btn:disabled:hover {
+  background-color: var(--white);
+  color: var(--green) !important;
+  cursor: wait;
+}
+
+/* media query */
+@media (max-width: 768px) {
+  .submit-message {
+    width: 125px;
+    margin-left: 200px;
+  }
+  .contactForm {
+    width: 80%;
+  }
+}
+@media (max-width: 350px) {
+  .contactForm {
+    width: 95%;
+  }
+  .contact-button {
+    margin-left: 70%;
+  }
+}

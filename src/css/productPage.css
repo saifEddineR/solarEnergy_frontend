@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+.productPage-title {
+  text-align: center;
+  margin-top: 40px;
+  font-family: 'Lato', sans-serif;
+}
+.productPage-title h1 {
+  font-size: 35px;
+}
+.productPage-title h5 {
+  color: darkgray;
+}
+.products-page {
+  margin: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 1150px) {
+  .products-page {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
+@media (max-width: 900px) {
+  .products-page {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .products-page {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+}
+.productPage-card {
+  width: 280px;
+  border: 1.5px solid grey;
+  text-align: center;
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.productPage-card img {
+  width: 250px;
+  height: 250px;
+  border-bottom: 1px solid lightgray;
+}
+.productPage-card:hover {
+  box-shadow: 0 0 15px 5px darkgray;
+  transition: 0.5s;
+}
