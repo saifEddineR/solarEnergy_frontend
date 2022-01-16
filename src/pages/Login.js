@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../slices/userSlice';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ const Login = () => {
   useEffect(() => {
     if (isAuth && userInfo.role === 'user') navigate('/profile');
     else if (isAuth && userInfo.role === 'admin') navigate('/dashboard');
-  }, [isAuth]);
+  }, [isAuth, navigate, userInfo.role]);
   const loginInput = (info) => {
     dispatch(login({ info, navigate }));
   };
@@ -47,6 +47,7 @@ const Login = () => {
               type='submit'
               value='Login'
             />
+            <Link to='/signup'>Don't have an account yet ?</Link>
           </form>
         </div>
       </div>

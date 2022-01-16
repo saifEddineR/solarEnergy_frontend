@@ -1,10 +1,15 @@
 import '../css/projectsPage.css';
-import React from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Card from '../components/Card';
+import { getProjects } from '../slices/projectSlice';
 
 const Projects = () => {
-  const projects = useSelector((state) => state.auth.projects);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProjects());
+  }, [dispatch]);
+  const projects = useSelector((state) => state.projects.projectList);
   return (
     <div className='projectsPage'>
       <div className='projectsPage-title'>

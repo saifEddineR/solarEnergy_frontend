@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Modal, Button, Form } from 'react-bootstrap';
-import { addProject, editProject } from '../action/AdminActions';
 import { FiEdit } from 'react-icons/fi';
 import { AiFillFileAdd } from 'react-icons/ai';
+import { addProject, editProject } from '../slices/projectSlice';
 
 function ModalProject({ showedit, project }) {
   const dispatch = useDispatch();
@@ -79,11 +79,10 @@ function ModalProject({ showedit, project }) {
               />
             </Form.Group>
             <Form.Group>
-              <Form.File
+              <input type='file' onChange={handleFile} label='Example file input' />
+              {/* <Form.File
                 id='exampleFormControlFile1'
-                onChange={handleFile}
-                label='Example file input'
-              />
+              /> */}
             </Form.Group>
             <Button variant='danger' onClick={() => setModalShow(false)}>
               Close

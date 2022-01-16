@@ -2,10 +2,10 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FaTrash } from 'react-icons/fa';
 import ModalButton from './Modal';
-import { deleteProduct } from '../action/AdminActions';
+import { deleteProduct } from '../slices/productSlice';
 
 const Products = () => {
-  const products = useSelector((state) => state.auth.products);
+  const { productList } = useSelector((state) => state.products);
 
   return (
     <>
@@ -16,8 +16,8 @@ const Products = () => {
         </span>
       </div>
       <div className='products-container'>
-        {products
-          ? products.map((product) => <ProductCard key={product._id} {...product} />)
+        {productList
+          ? productList.map((product) => <ProductCard key={product._id} {...product} />)
           : true}
       </div>
     </>

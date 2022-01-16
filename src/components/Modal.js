@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Modal, Button, Form } from 'react-bootstrap';
-import { addProduct, editProduct } from '../action/AdminActions';
 import { FiEdit } from 'react-icons/fi';
 import { AiFillFileAdd } from 'react-icons/ai';
+import { addProduct, editProduct } from '../slices/productSlice';
 
 function ModalButton({ showedit, product }) {
   const dispatch = useDispatch();

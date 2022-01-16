@@ -58,7 +58,7 @@ const UserCard = ({
         </p>
         <p>realised at : {CreatedAt} </p>
         {roofImg.map((img, index) => (
-          <div>
+          <div key={index}>
             <a href={img}> image{index + 1} </a>
           </div>
         ))}

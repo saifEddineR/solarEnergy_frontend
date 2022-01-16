@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { FaTrash } from 'react-icons/fa';
 import ModalProject from './ModalProject';
-import { deleteProject } from '../action/AdminActions';
+import { deleteProject } from '../slices/projectSlice';
 
 const Projects = () => {
-  const projects = useSelector((state) => state.auth.projects);
+  const { projectList } = useSelector((state) => state.projects);
   return (
     <div>
       <div className='mini-navbar'>
@@ -14,8 +14,8 @@ const Projects = () => {
         </span>
       </div>
       <div className='products-container'>
-        {projects
-          ? projects.map((project) => <ProjectCard key={project._id} {...project} />)
+        {projectList
+          ? projectList.map((project) => <ProjectCard key={project._id} {...project} />)
           : true}
       </div>
     </div>

@@ -4,24 +4,19 @@ export const menuItems = [
     url: '/',
     cName: 'nav-links',
   },
-  // {
-  //   title: 'Products',
-  //   url:'/',
-  //   cName:'nav-links',
-  // },
-  // {
-  //   title: 'Projects',
-  //   url:'/',
-  //   cName:'nav-links',
-  // },
   {
-    title: 'Services',
-    url: '/services',
+    title: 'Products',
+    url: '/products',
     cName: 'nav-links',
   },
   {
-    title: 'register',
-    url: '/signup',
+    title: 'Projects',
+    url: '/projects',
+    cName: 'nav-links',
+  },
+  {
+    title: 'Services',
+    url: '/services',
     cName: 'nav-links',
   },
   {

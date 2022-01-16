@@ -7,13 +7,17 @@ import Products from './pages/Products';
 import Services from './pages/Services';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import DashboardProject from './components/Projects';
+import DashboardProduct from './components/Products';
+
 // import Esteem from './components/service_esteem/Esteem';
 // import Result from './components/service_esteem/Result';
-// import ControlPanel from './pages/ControlPanel';
+import ControlPanel from './pages/ControlPanel';
 import Navbar from './components/navbar/Navbar';
 import PrivateRoute from './components/PrivateRoute';
 import Post from './pages/Post';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
@@ -25,10 +29,15 @@ function App() {
         <Route path='/services' element={<Services />} />
         <Route path='/projects' element={<Projects />} />
         {/* <Route path='/esteem' element={<Esteem />} /> */}
-        {/* <Route path='/result' element={<Result />} />
-        <Route path='/control-panel'>
-          <PrivateRoute element={<ControlPanel />} />
-        </Route> */}
+        {/* <Route path='/result' element={<Result />} />*/}
+        <Route element={<PrivateRoute />}>
+          <Route path='/control-panel' element={<ControlPanel />}>
+            <Route path='/control-panel' element={<Dashboard />} />
+            <Route path='/control-panel/products' element={<DashboardProduct />} />
+            <Route path='/control-panel/projects' element={<DashboardProject />} />
+            {/*<Route path='/control-panel/userEsteem' element={<UserEsteem />} /> */}
+          </Route>
+        </Route>
         <Route path='/' element={<Home />} />
         <Route path='/signin' element={<Login />} />
         <Route path='/signup' element={<Register />} />

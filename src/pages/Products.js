@@ -1,8 +1,14 @@
 import '../css/productPage.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getProducts } from '../slices/productSlice';
 
 const Products = () => {
-  const products = useSelector((state) => state.auth.products);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProducts());
+  }, [dispatch]);
+  const products = useSelector((state) => state.products.productList);
   return (
     <div>
       <div className='productPage-title'>
