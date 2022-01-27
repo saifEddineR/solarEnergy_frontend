@@ -1,9 +1,14 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { FaTrash } from 'react-icons/fa';
 import ModalProject from './ModalProject';
-import { deleteProject } from '../slices/projectSlice';
+import { deleteProject, getProjects } from '../slices/projectSlice';
+import { useEffect } from 'react';
 
 const Projects = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProjects());
+  }, [dispatch]);
   const { projectList } = useSelector((state) => state.projects);
   return (
     <div>
@@ -22,18 +27,18 @@ const Projects = () => {
   );
 };
 
-export const ProjectCard = ({ _id, title, desc, imgUpload, img }) => {
+export const ProjectCard = ({ _id, title, desc, imgUpload }) => {
   const dispatch = useDispatch();
   return (
     <div className='productAD-card'>
       <span>
-        <img src={imgUpload} alt='project' />
+        <img src={imgUpload.imageURL} alt='project' />
       </span>
       <h4 className='name'>{title}</h4>
       <h6 className='desc'>{desc}</h6>
       <span className='buttons' style={{ paddingTop: '30px' }}>
         <button className='card-btn edit-btn'>
-          <ModalProject showedit={true} project={{ _id, title, img, desc }} />
+          <ModalProject showedit={true} project={{ _id, title, desc }} />
         </button>
         <button
           onClick={() => dispatch(deleteProject(_id))}

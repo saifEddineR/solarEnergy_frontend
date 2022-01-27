@@ -2,10 +2,13 @@ import { useState } from 'react';
 import './navbar.css';
 import { Link } from 'react-router-dom';
 import { menuItems } from './MenuItems';
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from '../../slices/userSlice';
 
 const NavBarClient = () => {
   const [active, setActive] = useState(false);
-
+  const dispatch = useDispatch();
+  const { isAuth } = useSelector((state) => state.user);
   return (
     <>
       <nav className='NavbarItems'>
@@ -23,6 +26,17 @@ const NavBarClient = () => {
               </Link>
             </li>
           ))}
+          <li>
+            {isAuth ? (
+              <Link to='/signin' className='nav-links' onClick={() => dispatch(logout())}>
+                Logout
+              </Link>
+            ) : (
+              <Link to='/signin' className='nav-links'>
+                Login
+              </Link>
+            )}
+          </li>
         </ul>
       </nav>
     </>

@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -15,14 +15,14 @@ import DashboardProduct from './components/Products';
 import ControlPanel from './pages/ControlPanel';
 import Navbar from './components/navbar/Navbar';
 import PrivateRoute from './components/PrivateRoute';
-import Post from './pages/Post';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './components/Dashboard';
 
 function App() {
+  const location = useLocation();
   return (
     <div>
-      <Navbar />
+      {!location.pathname.includes('/control-panel') && <Navbar />}
       <Routes>
         <Route path='/contact' element={<Contact />} />
         <Route path='/products' element={<Products />} />
@@ -41,7 +41,6 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/signin' element={<Login />} />
         <Route path='/signup' element={<Register />} />
-        <Route path='/posts' element={<Post />} />
         <Route element={<PrivateRoute />}>
           <Route path='/profile' element={<Profile />} />
         </Route>

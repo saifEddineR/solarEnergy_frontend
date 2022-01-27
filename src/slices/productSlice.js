@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import setToken from '../utils/setToken';
 
 // get all the products
 export const getProducts = createAsyncThunk(
@@ -17,10 +18,10 @@ export const getProducts = createAsyncThunk(
 // add new product
 export const addProduct = createAsyncThunk(
   'product/addProduct',
-  async (info, { rejectWithValue }) => {
+  async (info, { rejectWithValue, dispatch }) => {
     try {
-      // const { data } = await axios.get('/api/product');
-      // return data;
+      await axios.post('/api/product/add', info, setToken());
+      dispatch(getProducts());
     } catch (errors) {
       return rejectWithValue(errors);
     }
@@ -41,10 +42,10 @@ export const editProduct = createAsyncThunk(
 // delete Product
 export const deleteProduct = createAsyncThunk(
   'product/deleteProduct',
-  async (info, { rejectWithValue }) => {
+  async (productId, { rejectWithValue, dispatch }) => {
     try {
-      // const { data } = await axios.get('/api/product');
-      // return data;
+      await axios.delete(`/api/product/${productId}`, setToken());
+      dispatch(getProducts());
     } catch (errors) {
       return rejectWithValue(errors);
     }
@@ -54,10 +55,23 @@ export const deleteProduct = createAsyncThunk(
 const productSlice = createSlice({
   name: 'product',
   initialState: {
+    loading: false,
     productList: [],
     errors: null,
   },
-  extraReducers: {},
+  extraReducers: {
+    [getProducts.pending]: (state) => {
+      state.loading = true;
+    },
+    [getProducts.fulfilled]: (state, action) => {
+      state.loading = false;
+      state.productList = action.payload;
+    },
+    [getProducts.rejected]: (state, action) => {
+      state.loading = false;
+      state.errors = action.payload;
+    },
+  },
 });
 
 export default productSlice.reducer;

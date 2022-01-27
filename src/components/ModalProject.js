@@ -11,7 +11,6 @@ function ModalProject({ showedit, project }) {
   const [file, setFile] = useState(null);
   const [input, setInput] = useState({
     title: '',
-    img: '',
     desc: '',
   });
   const handleInput = (e) => {
@@ -21,10 +20,9 @@ function ModalProject({ showedit, project }) {
     e.preventDefault();
     project
       ? dispatch(editProject(project._id, input))
-      : dispatch(addProject(input, file));
+      : dispatch(addProject({ input, file }));
     setInput({
       title: '',
-      img: '',
       desc: '',
     });
     setModalShow(false);

@@ -14,6 +14,7 @@ import { GiAutoRepair } from 'react-icons/gi';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { IconContext } from 'react-icons';
+import { logout } from '../slices/userSlice';
 
 // component duhh
 const ControlPanel = () => {
@@ -31,7 +32,7 @@ const ControlPanel = () => {
             <h3 className='AD-title'>Admin Dashboard</h3>
           </div>
           <div className='nav_logout'>
-            <Link id='logout' onClick={() => dispatch()} to='/login'>
+            <Link id='logout' onClick={() => dispatch(logout())} to='/signin'>
               <span id='logout-icon'>
                 <RiLogoutBoxLine />
               </span>

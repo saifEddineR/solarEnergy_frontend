@@ -19,11 +19,6 @@ export const menuItems = [
     url: '/services',
     cName: 'nav-links',
   },
-  {
-    title: 'Login',
-    url: '/signin',
-    cName: 'nav-links',
-  },
   // {
   //   title: 'Contact us',
   //   url: '/contact',

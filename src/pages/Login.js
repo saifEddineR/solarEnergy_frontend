@@ -12,7 +12,7 @@ const Login = () => {
   const { register, handleSubmit } = useForm();
   useEffect(() => {
     if (isAuth && userInfo.role === 'user') navigate('/profile');
-    else if (isAuth && userInfo.role === 'admin') navigate('/dashboard');
+    else if (isAuth && userInfo.role === 'admin') navigate('/control-panel');
   }, [isAuth, navigate, userInfo.role]);
   const loginInput = (info) => {
     dispatch(login({ info, navigate }));
