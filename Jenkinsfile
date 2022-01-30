@@ -7,7 +7,9 @@ pipeline{
     agent any
     stages{
         stage("test"){
-            echo "testing with sonarQube"
+            steps{
+                echo "testing with sonarQube"
+            }
         }
         stage("build"){
             
