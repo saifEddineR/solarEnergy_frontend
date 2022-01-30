@@ -36,7 +36,7 @@ const FooterHome = () => {
         </span>
         <span>
           <AiOutlineLink />
-          <a href='#'>www.solarenergy.tn</a>
+          <a href='/'>www.solarenergy.tn</a>
         </span>
       </div>
     </div>

@@ -14,9 +14,6 @@ const Contact = () => {
     subject: '',
     message: '',
   });
-  const contactData = (e) => {
-    setContactInfo({ ...contactInfo, [e.target.name]: e.target.value });
-  };
 
   const toastifySuccess = () => {
     toast('Form sent!', {

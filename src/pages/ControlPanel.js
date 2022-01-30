@@ -1,7 +1,7 @@
 import '../css/control-panel.css';
 import '../css/products.css';
 import '../css/Sidebar.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 // redux
 import { useDispatch } from 'react-redux';
