@@ -12,7 +12,7 @@ pipeline{
                 script {
                     withSonarQubeEnv("sonarQube") {
                     sh "${scannerHome}/bin/sonar-scanner \
-                        -Dsonar.projectKey=solarenergy-backend \
+                        -Dsonar.projectKey=solarenergy-frontend \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=http://localhost:9000 \
                         -Dsonar.login=admin \
