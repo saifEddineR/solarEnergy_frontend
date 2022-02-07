@@ -7,18 +7,6 @@ pipeline{
     }
     agent any
     stages{
-        stage("test"){
-            steps{
-                echo "testing with sonarQube"
-            }
-        }
-        stage("build"){
-            
-            steps{
-                sh 'npm install'
-                sh 'npm run build'
-            }
-        }
         stage("test-sonar"){
             steps{
                 script {
@@ -33,6 +21,14 @@ pipeline{
                 }
             }
         }
+        stage("build"){
+            
+            steps{
+                sh 'npm install'
+                sh 'npm run build'
+            }
+        }
+        
         stage("docker-build"){
             steps{
                 script {
