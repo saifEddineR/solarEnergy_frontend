@@ -3,6 +3,7 @@ pipeline{
         imagename = "saifromdhane/solarenergy_front"
         registryCredential = "dockerhub_credentials"
         // dockerImage = ''
+        def scannerHome = tool 'sonarqube-scanner'
     }
     agent any
     stages{
