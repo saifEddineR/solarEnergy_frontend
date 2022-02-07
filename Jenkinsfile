@@ -18,6 +18,20 @@ pipeline{
                 sh 'npm run build'
             }
         }
+        stage("test-sonar"){
+            steps{
+                script {
+                    withSonarQubeEnv("sonarQube") {
+                    sh "${scannerHome}/bin/sonar-scanner \
+                        -Dsonar.projectKey=solarenergy-backend \
+                        -Dsonar.sources=. \
+                        -Dsonar.host.url=http://localhost:9000 \
+                        -Dsonar.login=admin \
+                        -Dsonar.password=trythisagain96"
+                    } 
+                }
+            }
+        }
         stage("docker-build"){
             steps{
                 script {
