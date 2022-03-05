@@ -7,7 +7,7 @@ import store from './store';
 import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.baseURL = `http://192.168.58.2:30100`;
 
 ReactDOM.render(
   <BrowserRouter>
